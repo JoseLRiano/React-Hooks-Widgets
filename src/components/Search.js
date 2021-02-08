@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Search = () => {
-    return <h1>Search component!</h1>
+    const [term, setTerm] = useState('');
+
+    return (
+        <div className="ui form">
+            <div className="field">
+                <label>Enter Search Term</label>
+                <input 
+                    className="input" 
+                    onChange={e => setTerm(e.target.value)}
+                    value={term}
+                />
+            </div>
+        </div>    
+    );
 }
 
 export default Search;
